@@ -5,7 +5,7 @@ import os
 from PIL import Image
 
 app = Flask(__name__)
-UPLOAD_FOLDER = 'uploads'
+UPLOAD_FOLDER = 'static/images'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 def add_noise(image, noise_type, param):
