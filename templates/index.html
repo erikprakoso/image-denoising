@@ -115,6 +115,19 @@
             {% endfor %}
         </div>
         {% endif %}
+
+        {% if improved_images %}
+        <h2 class="text-xl font-semibold mb-2">Improved Images:</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {% for improved_image, improved_psnr_value in zip(improved_images, improved_psnr_values) %}
+            <div class="border p-4 rounded-lg bg-white">
+                <img src="{{ url_for('static', filename='images/' + improved_image) }}" alt="Improved Image"
+                    class="mb-2 w-full">
+                <p>PSNR: {{ improved_psnr_value }}</p>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
     </div>
 
     <script>
